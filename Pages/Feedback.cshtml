@@ -1,0 +1,40 @@
+@page
+@model FeedbackModel
+@{
+    ViewData["Title"] = "Feedback Form";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+
+    <form method="post">
+
+        <div class="form-group ">
+            <label>Name:</label>
+            <input type="text" class="form-control" asp-for="user!.UserName" placeholder="Enter Name">
+            <span asp-validation-for="user!.UserName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label>Email:</label>
+            <input type="email" class="form-control" asp-for="user!.UserEmail" placeholder="Enter Email">
+            <span asp-validation-for="user!.UserEmail" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label>Feedback:</label>
+            <input type="text" class="form-control" asp-for="user!.UserFeedbackMessage"
+                placeholder="Enter Feedback Message">
+            <span asp-validation-for="user!.UserFeedbackMessage" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label>Phone Number:</label>
+            <input type="text" class="form-control" asp-for="user!.UserPhoneNumber" placeholder="Enter Phone Number">
+            <span asp-validation-for="user!.UserPhoneNumber" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+
+    </form>
+</div>

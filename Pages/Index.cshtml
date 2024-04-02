@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container mt-2">
+    <div class="jumbotron">
+        <h1 class="display-4">@Model.header</h1>
+        <h5 class="display-10">@Model.todayDate</h5>
+        <h5 class="display-10">@Model.todatTime</h5>
+
+        <hr class="my-4">
+
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" asp-page="/Feedback" role="button">Add a new User</a>
+        </p>
+    </div>
+
+    @if (Model.users.Count > 0)
+    {
+        <div class="container mt-3">
+            <div class="row">
+
+                @foreach (var user in Model.users)
+                {
+                    <div class="col-sm-4">
+                        <div class="card mb-4" style="width: 18rem;">
+                            <img class="card-img-top" src="image\user.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">@user.UserName</h5>
+                                <p class="card-text">@user.UserEmail</p>
+                                <p class="card-text"> @user.UserPhoneNumber </p>
+                                <p class="card-text">@user.UserFeedbackMessage </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>No Users Registered</p>
+    }
+</div>

@@ -1,0 +1,12 @@
+@page
+@model SuccessModel
+@{
+    ViewData["Title"] = "Success page";
+}
+
+<div>
+    <h1>Feedback saved successfully!</h1>
+    <h2>Name : @Model.user!.UserName</h2>
+    <h2>Email : @Model.user.UserEmail</h2>
+    <h2>Feedback : @Model.user.UserFeedbackMessage</h2>
+</div>
